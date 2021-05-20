@@ -54,6 +54,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  "fcf" '(visit-functions :which-key "functions")
  "fcs" '(visit-fish-config :which-key "fish")
 
+  "g"   '(:ignore t :which-key "git")
+ "gs"  '(magit-status :which-key "status")
+ "gp"  '(magit-pull :which-key "pull")
+ "gP"  '(magit-push :which-key "push")
+ "gco" '(magit-checkout :which-key "checkout")
+ "gcl" '(magit-clone :which-key "clone")
+ "gci" '(magit-commit :which-key "commit")
+ "gb"  '(magit-branch-or-checkout :which-key "branch")
 
 
  "w"   '(:ignore t :which-key "window")

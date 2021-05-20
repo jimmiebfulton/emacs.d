@@ -40,11 +40,8 @@
 (setq ring-bell-function 'ignore )	; silent bell when you make a mistake
 (setq sentence-end-double-space nil)	; sentence SHOULD end with only a point.
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/bindings.el")
 (load "~/.emacs.d/functions.el")
 
+(put 'upcase-region 'disabled nil)

@@ -1,3 +1,6 @@
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
 
 ;; Bootstrap `use-package`
@@ -9,9 +12,18 @@
 ;; evil mode
 (use-package evil
   :ensure t
+  :init
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
   (setq evil-emacs-state-modes (delq 'ibuffer-mode evil-emacs-state-modes))
+  )
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init)
   )
 
 ;; Ivy
@@ -115,6 +127,11 @@
   (key-chord-mode 1)
   )
 
+;; Git
+(use-package magit
+  :ensure t
+  )
+
 ;;
 ;; Rust Support
 ;;
@@ -172,4 +189,7 @@
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   (add-hook 'text-mode-hook 'yas-minor-mode))
 
-(use-package flycheck :ensure)
+(use-package flycheck
+  :ensure t
+  :config
+  (flycheck-mode 1))

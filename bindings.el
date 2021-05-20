@@ -1,3 +1,30 @@
+;;; esc quits
+(defun minibuffer-keyboard-quit ()
+  "Abort recursive edit.
+In Delete Selection mode, if the mark is active, just deactivate it;
+then it takes a second \\[keyboard-quit] to abort the minibuffer."
+  (interactive)
+  (if (and delete-selection-mode transient-mark-mode mark-active)
+      (setq deactivate-mark  t)
+    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+    (abort-recursive-edit)))
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'keyboard-quit)
+
+
+
+(general-define-key
+ :states '(normal)
+ "/"   'swiper
+ "TAB" 'ace-select-window
+ )
+
 
 (general-define-key
  :states '(normal visual insert emacs motion)
@@ -6,7 +33,7 @@
  :non-normal-prefix "C-SPC"
 
  "SPC" '(counsel-M-x :which-key "M-x")
- "/"   '(swiper :which-key "swiper")
+ "TAB" '(ace-select-window :which-key "window")
 
  "b"   '(:ignore t :which-key "buffer")
  "bs"  '(save-buffer :which-key "save")
@@ -30,15 +57,13 @@
 
 
  "w"   '(:ignore t :which-key "window")
- "w1"  '(toggle-maximize-buffer :which-key "toggle")
- "wk"  '(:ignore t :which-key "kill")
- "wkk" '(delete-window :which-key "this")
- "wko" '(ace-delete-window :which-key "other")
- "wkr" '(ace-delete-other-windows :which-key "retain")
+ "ww"  '(toggle-maximize-buffer :which-key "toggle")
+ "wk"  '(delete-window :which-key "kill this")
+ "wK" '(ace-delete-window :which-key "kill other")
+ "wr" '(ace-delete-other-windows :which-key "kill retain")
  "wo"  '(ace-select-window :which-key "select")
- "ws"  '(:ignore t :which-key "split")
- "wsv" '(split-window-vertically :which-key "ver")
- "wsh" '(split-window-horizontally :which-key "hor")
+ "wv" '(split-window-vertically :which-key "split v")
+ "wh" '(split-window-horizontally :which-key "split h")
 
  "e"   '(:ignore t :which-key "eval")
  "ee"  '(eval-expression :which-key "expr")

@@ -9,4 +9,6 @@ elpa
 /eshell/lastdir
 amx-items
 network-security.data
+.lsp-session-v1
+SessionDesktop.el
 *~

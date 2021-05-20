@@ -1,7 +1,9 @@
-
-(require 'server)
-(if (not (server-running-p))
-    (server-start))
+(when (not (string-equal (terminal-name) "/dev/tty"))
+    (require 'server)
+    (if (not (server-running-p))
+        (server-start))
+    (mac-auto-operator-composition-mode)
+)
 
 (setq mac-command-modifier 'control)
 (setq mac-right-command-modifier 'super)
@@ -16,6 +18,15 @@
 (set-keyboard-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)
 (setq coding-system-for-write 'utf-8)
+
+;; Enable Font Ligatures
+(set-face-attribute 'default nil
+                    :family "JetBrainsMonoMedium Nerd Font"
+                    :height 140
+                    :weight 'normal
+                    :width 'normal)
+
+
 
 ;; Don't create backups
 (setq make-backup-files nil)
@@ -37,15 +48,3 @@
 (load "~/.emacs.d/bindings.el")
 (load "~/.emacs.d/functions.el")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(amx ivy use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

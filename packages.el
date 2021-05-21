@@ -1,5 +1,6 @@
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 
@@ -70,6 +71,21 @@
   :config
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
+
+(use-package counsel-projectile
+  :ensure t
+  :defer t
+  )
+
+
 
 
 (use-package general

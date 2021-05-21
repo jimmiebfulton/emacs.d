@@ -45,3 +45,16 @@
 (load "~/.emacs.d/functions.el")
 
 (put 'upcase-region 'disabled nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(edit-indirect counsel-projectile projectile yasnippet which-key use-package telephone-line rustic magit lsp-ui key-chord general flycheck evil-collection doom-themes counsel company amx all-the-icons-ivy afternoon-theme ace-window ace-jump-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

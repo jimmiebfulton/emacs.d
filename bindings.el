@@ -36,6 +36,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  "TAB" '(ace-select-window :which-key "window")
 
  "b"   '(:ignore t :which-key "buffer")
+ "b>"  '(next-buffer :which-key "next")
+ "b<"  '(previous-buffer :which-key "previous")
  "bs"  '(save-buffer :which-key "save")
  "bk"  '(kill-this-buffer :which-key "kill")
  "bK"  '(kill-buffer :which-key "kill other")
@@ -45,6 +47,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  "f"   '(:ignore t :which-key "find")
  "ff"  '(counsel-find-file :which-key "file")
  "fr"  '(counsel-recentf :which-key "recent")
+ "fR"  '(counsel-buffer-or-recentf :which-key "buffer or recent")
  "fd"  '(counsel-dired :which-key "dir")
  "fp"  '(find-file-at-point :which-key "at point")
  "fci" 'visit-config
@@ -52,7 +55,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  "fcb" '(visit-bindings :which-key "bindings")
  "fcp" '(visit-packages :which-key "packages")
  "fcf" '(visit-functions :which-key "functions")
- "fcs" '(visit-fish-config :which-key "fish")
+ "fcs" '(visit-settings :which-key "settings")
+ "fcF" '(visit-fish-config :which-key "fish")
 
  "g"   '(:ignore t :which-key "git")
  "gs"  '(magit-status :which-key "status")

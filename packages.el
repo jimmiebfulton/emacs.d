@@ -1,3 +1,6 @@
+;; package-initialize is called automatically if not found commented out
+;; (package-initialize)
+
 (require 'package)
 ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://stable.melpa.org/packages/") t)
@@ -94,8 +97,7 @@
   (general-override-mode)
   )
 
-(when (not (string-equal (terminal-name) "/dev/tty"))
-
+(when (window-system)
   ;; (use-package afternoon-theme
   ;;    :ensure t
   ;;    :config
@@ -117,7 +119,7 @@
     (telephone-line-mode 1))
   )
 
-(when (not (string-equal (terminal-name) "/dev/tty"))
+(when (window-system)
 
   (use-package all-the-icons-ivy
     :ensure t

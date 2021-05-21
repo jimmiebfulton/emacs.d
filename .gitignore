@@ -2,18 +2,6 @@
 */
 
 !*.el
+!.gitignore
 
-auto-save-list
-projectile-bookmarks.eld
-recentf
-auto-save-list
-elpa
-.cache/
-/transient
-/eshell/history
-/eshell/lastdir
-amx-items
-network-security.data
-.lsp-session-v1
 SessionDesktop.el
-*~

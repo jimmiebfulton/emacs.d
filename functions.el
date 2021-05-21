@@ -3,6 +3,11 @@
        (find-file "~/.emacs.d/init.el")
        )
 
+(defun visit-settings() "Open settings.el."
+       (interactive)
+       (find-file "~/.emacs.d/settings.el")
+       )
+       
 (defun visit-packages() "Open packages.el."
        (interactive)
        (find-file "~/.emacs.d/packages.el")

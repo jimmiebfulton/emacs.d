@@ -6,21 +6,30 @@
 (add-to-list 'package-archives '("melpa" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-
 ;; Bootstrap `use-package`
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
 
+;; undo-tree
+(use-package undo-tree
+  :ensure t
+  )
+
 ;; evil mode
 (use-package evil
   :ensure t
   :init
   (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-undo-system 'undo-tree)
+
   :config
   (evil-mode 1)
   (setq evil-emacs-state-modes (delq 'ibuffer-mode evil-emacs-state-modes))
+  (global-undo-tree-mode)   
+  (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
   )
 
 (use-package evil-collection
@@ -142,7 +151,9 @@
   :config
   (setq key-chord-two-keys-delay 0.5)
   (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+  (key-chord-define evil-replace-state-map "jf" 'evil-normal-state)
   (key-chord-define evil-insert-state-map "jf" 'evil-normal-state)
+  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
   (key-chord-mode 1)
   )
 

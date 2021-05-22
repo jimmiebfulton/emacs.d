@@ -35,3 +35,7 @@
 (setq inhibit-startup-screen t )	; inhibit useless and old-school startup screen
 (setq ring-bell-function 'ignore )	; silent bell when you make a mistake
 (setq sentence-end-double-space nil)	; sentence SHOULD end with only a point.
+
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
+ 

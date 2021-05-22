@@ -22,7 +22,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (general-define-key
  :states '(normal)
  "/"   'swiper
- "TAB" 'ace-select-window
  )
 
 
@@ -38,11 +37,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  "b"   '(:ignore t :which-key "buffer")
  "b>"  '(next-buffer :which-key "next")
  "b<"  '(previous-buffer :which-key "previous")
+ "bn"  '(evil-buffer-new :which-key "new")
  "bs"  '(save-buffer :which-key "save")
  "bk"  '(kill-this-buffer :which-key "kill")
  "bK"  '(kill-buffer :which-key "kill other")
  "bo"  '(counsel-switch-buffer :which-key "switch")
  "bl"  '(ibuffer :which-key "list")
+ "bw"  '(write-file :which-key "write")
 
  "f"   '(:ignore t :which-key "find")
  "ff"  '(counsel-find-file :which-key "file")

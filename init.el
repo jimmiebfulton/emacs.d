@@ -1,3 +1,7 @@
+(defconst emacs-start-time (current-time))
+(setq gc-cons-threshold 402653184 gc-cons-percentage 0.6)
+
+
 (when (window-system) 
     (require 'server)
     (if (not (server-running-p))
@@ -6,7 +10,7 @@
 
 (when (window-system)
   (set-frame-size (selected-frame) 170 50)
-  (set-frame-position (selected-frame) 100 600)
+  (set-frame-position (selected-frame) 50 600)
 )
 
 
@@ -22,7 +26,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(edit-indirect counsel-projectile projectile yasnippet which-key use-package telephone-line rustic magit lsp-ui key-chord general flycheck evil-collection doom-themes counsel company amx all-the-icons-ivy afternoon-theme ace-window ace-jump-mode)))
+   '(multiple-cursors edit-indirect counsel-projectile projectile yasnippet which-key use-package telephone-line rustic magit lsp-ui key-chord general flycheck evil-collection doom-themes counsel company amx all-the-icons-ivy afternoon-theme ace-window ace-jump-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

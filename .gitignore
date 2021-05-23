@@ -5,3 +5,4 @@
 !.gitignore
 
 SessionDesktop.el
+.mc-lists.el

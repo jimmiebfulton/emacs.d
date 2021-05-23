@@ -17,6 +17,7 @@
   :ensure t
   )
 
+
 ;; evil mode
 (use-package evil
   :ensure t
@@ -37,6 +38,12 @@
   :ensure t
   :config
   (evil-collection-init)
+  )
+
+(use-package evil-mc
+  :ensure t
+  :config
+  (global-evil-mc-mode 1)
   )
 
 ;; Ivy
@@ -76,7 +83,11 @@
   (setq which-key-idle-delay 0.5)
   :config
   (which-key-mode t)
-  (which-key-setup-minibuffer))
+  (which-key-setup-minibuffer)
+  (setq which-key-allow-evil-operators t)
+  (setq which-key-show-operator-state-maps t)
+)
+
 
 (use-package counsel
   :ensure t

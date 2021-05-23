@@ -45,6 +45,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  "bl"  '(ibuffer :which-key "list")
  "bw"  '(write-file :which-key "write")
 
+ ;; This is the file menu
  "f"   '(:ignore t :which-key "find")
  "ff"  '(counsel-find-file :which-key "file")
  "fr"  '(counsel-recentf :which-key "recent")

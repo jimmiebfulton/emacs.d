@@ -70,18 +70,19 @@
 ;;   (setq enable-recursive-minibuffers t)
 ;;   (global-set-key (kbd "C-c C-r") 'ivy-resume))
 
+;; (use-package amx
+;;   :ensure t
+;;   :config
+;;   (amx-mode 1)
+;;   )
+
+
 
 (use-package company
   :ensure t
   :config
   (global-company-mode))
 
-
-;; (use-package amx
-;;   :ensure t
-;;   :config
-;;   (amx-mode 1)
-;;   )
 
 
 (use-package swiper
@@ -90,21 +91,22 @@
 
 (use-package which-key
   :ensure t
-  :init
-  
+  :config
+  (which-key-mode 1)
+  )  
 
-;; (use-package counsel
-;;   :ensure t
-;;   :config
-;;   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-;;   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+(use-package counsel
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+  (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 
-;; (use-package projectile
-;;   :ensure t
-;;   :config
-;;   (projectile-mode +1)
-;;   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-;;   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 
 ;; (use-package counsel-projectile
@@ -122,11 +124,7 @@
   (use-package telephone-line
     :ensure t
     :config
-    ;; (setq telephone-line-primary-left-separator 'telephone-line-cubed-left
-    ;; 	  telephone-line-secondary-left-separator 'telephone-line-cubed-hollow-left
-    ;; 	  telephone-line-primary-right-separator 'telephone-line-cubed-right
-    ;; 	  telephone-line-secondary-right-separator 'telephone-line-cubed-hollow-right)
-    (setq telephone-line-height 24
+   (setq telephone-line-height 24
 	   telephone-line-evil-use-short-tag nil)
     (telephone-line-mode 1)
     )
@@ -140,29 +138,17 @@
 ;;     (all-the-icons-ivy-setup))
 ;; )
 
-;; (use-package ace-window
-;;   :ensure t
-;;   :defer t
-;;   )
+(use-package ace-window
+  :ensure t
+  :defer t
+  )
 
-;; (use-package ace-jump-mode
-;;   :ensure t
-;;   :defer t
-;;   )
+(use-package ace-jump-mode
+  :ensure t
+  :defer t
+  )
 
-;; (use-package key-chord
-;;   :ensure t
-;;   :config
-;;   (setq key-chord-two-keys-delay 0.3)
-;;   (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-;;   (key-chord-define evil-replace-state-map "jf" 'evil-normal-state)
-;;   (key-chord-define evil-insert-state-map "jf" 'evil-normal-state)
-;;   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-;;   (key-chord-mode 1)
-;;   )
-
-;; ;
-					; ;; Git
+;; Git
 (use-package magit
   :ensure t
   )
@@ -224,7 +210,7 @@
 ;;   (add-hook 'prog-mode-hook 'yas-minor-mode)
 ;;   (add-hook 'text-mode-hook 'yas-minor-mode))
 
-;; (use-package flycheck
-;;   :ensure t
-;;   :config
-;;   (flycheck-mode 1))
+(use-package flycheck
+  :ensure t
+  :config
+  (flycheck-mode 1))

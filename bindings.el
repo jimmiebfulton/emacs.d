@@ -1,23 +1,3 @@
-;; ;;; esc quits
-;; (defun minibuffer-keyboard-quit ()
-;;   "Abort recursive edit.
-;; In Delete Selection mode, if the mark is active, just deactivate it;
-;; then it takes a second \\[keyboard-quit] to abort the minibuffer."
-;;   (interactive)
-;;   (if (and delete-selection-mode transient-mark-mode mark-active)
-;;       (setq deactivate-mark  t)
-;;     (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
-;;     (abort-recursive-edit)))
-;; (define-key evil-normal-state-map [escape] 'keyboard-quit)
-;; (define-key evil-visual-state-map [escape] 'keyboard-quit)
-;; (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
-;; (global-set-key [escape] 'keyboard-quit)
-
-
 
 (general-define-key
  :states '(normal)
@@ -44,15 +24,15 @@
  "fcs" '(visit-settings :which-key "settings")
  "fcF" '(visit-fish-config :which-key "fish")
 
- "b"   '(:ignore t :which-key "buffer")
+ "b"   '(:ignore t :which-key "Buffers")
  "b>"  '(next-buffer :which-key "next")
  "b<"  '(previous-buffer :which-key "previous")
  "bn"  '(evil-buffer-new :which-key "new")
  "bs"  '(save-buffer :which-key "save")
  "bk"  '(kill-this-buffer :which-key "kill")
  "bK"  '(kill-buffer :which-key "kill other")
- "bo"  '(counsel-switch-buffer :which-key "switch")
- "bl"  '(helm-buffers-list :which-key "List")
+ "bo"  '(helm-buffers-list :which-key "Switch")
+ "bl"  '(ibuffer :which-key "List")
  "bw"  '(write-file :which-key "write")
 
  "e"   '(:ignore t :which-key "Eval")
@@ -60,7 +40,7 @@
  "eb"  '(eval-buffer :which-key "buffer")
  "er"  '(eval-region :which-key "region")
 
- "g"   '(:ignore t :which-key "git")
+ "g"   '(:ignore t :which-key "Git")
  "gs"  '(magit-status :which-key "status")
  "gp"  '(magit-pull :which-key "pull")
  "gP"  '(magit-push :which-key "push")
@@ -70,7 +50,7 @@
  "gb"  '(magit-branch-or-checkout :which-key "branch")
 
  "h"   '(:ignore t :which-key "Help")
- "hd"  '(:ignore t :which-key "Describe")
+ "hd"  '(:ignore t :which-key "Describe")
  "hdf" 'counsel-describe-function
  "hdv" 'counsel-describe-variable
  "hdm" 'describe-mode
@@ -79,10 +59,31 @@
  "hs"  'find-function
  "hh"  'help
 
+ "j"   '(:ignore t :which-key "jump")
+ "jc"  '(ace-jump-char-mode :which-key "char")
+ "jw"  '(ace-jump-word-mode :which-key "word")
+ "jl"  '(ace-jump-line-mode :which-key "line")
+ "jb"  '(ace-jump-mode-pop-mark :which-key "back")
+ "j<"  '(evil-goto-first-line :which-key "head")
+ "j>"  '(evil-goto-line :which-key "tail")
+ "jf"  '(find-file-at-point :which-key "file")
+ "jd"  '(dired-at-point :which-key "directory")
+ "ju"  '(browse-url-at-point :which-key "url")
+
  "t"   '(:ignore t :which-key "Text")
  "tc"  '(comment-or-uncomment-region :which-key "Comment Region")
  "tl"  '(comment-line :which-key "Comment Line")
  "ti"  '(indent-region :which-key "Indent Region")
+
+ "w"   '(:ignore t :which-key "window")
+ "ww"  '(toggle-maximize-buffer :which-key "toggle")
+ "wk"  '(delete-window :which-key "kill this")
+ "wK" '(ace-delete-window :which-key "kill other")
+ "wr" '(ace-delete-other-windows :which-key "kill retain")
+ "wo"  '(ace-select-window :which-key "select")
+ "wv" '(split-window-vertically :which-key "split v")
+ "wh" '(split-window-horizontally :which-key "split h")
+
  )
 
 ;; (general-define-key
@@ -180,3 +181,23 @@
 ;;  "hh"  'help
  
 ;;  )
+
+;; ;;; esc quits
+;; (defun minibuffer-keyboard-quit ()
+;;   "Abort recursive edit.
+;; In Delete Selection mode, if the mark is active, just deactivate it;
+;; then it takes a second \\[keyboard-quit] to abort the minibuffer."
+;;   (interactive)
+;;   (if (and delete-selection-mode transient-mark-mode mark-active)
+;;       (setq deactivate-mark  t)
+;;     (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+;;     (abort-recursive-edit)))
+;; (define-key evil-normal-state-map [escape] 'keyboard-quit)
+;; (define-key evil-visual-state-map [escape] 'keyboard-quit)
+;; (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+;; (define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+;; (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+;; (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+;; (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+;; (global-set-key [escape] 'keyboard-quit)
+

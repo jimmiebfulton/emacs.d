@@ -26,7 +26,7 @@
  ;; If there is more than one, they won't work right.
  '(helm-minibuffer-history-key "M-p")
  '(package-selected-packages
-   '(key-chord telephone-line general which-key swiper evil-collection evil helm use-package)))
+   '(evil-mc key-chord telephone-line general which-key swiper evil-collection evil helm use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

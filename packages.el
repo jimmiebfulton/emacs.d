@@ -12,7 +12,7 @@
   (package-install 'use-package))
 (require 'use-package)
 
-
+;; Helm
 (use-package helm
   :ensure t
   :demand t
@@ -26,6 +26,7 @@
   :ensure t
   )
 
+;; Evil
 (use-package evil
   :ensure t
   :init
@@ -37,20 +38,6 @@
   (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
 )
 
-;; ;; evil mode
-;; (use-package evil
-;;   :ensure t
-;;   :init
-;;   (setq evil-want-C-u-scroll t)
-;;   (setq evil-undo-system 'undo-tree)
-
-;;   :config
-;;   (evil-mode 1)
-;;   (setq evil-emacs-state-modes (delq 'ibuffer-mode evil-emacs-state-modes))
-;;   (global-undo-tree-mode)   
-;;   (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
-;;   )
-
 (use-package evil-collection
   :after evil
   :ensure t
@@ -58,11 +45,21 @@
   (evil-collection-init)
   )
 
-;; (use-package evil-mc
-;;   :ensure t
-;;   :config
-;;   (global-evil-mc-mode 1)
-;;   )
+(use-package evil-escape
+  :ensure t
+  :init
+  (setq evil-escape-key-sequence "jf")
+  (setq-default evil-escape-delay 0.2)
+  (setq evil-escape-unordered-key-sequence t)
+  :config
+  (evil-escape-mode)
+  )
+
+(use-package evil-mc
+  :ensure t
+  :config
+  (global-evil-mc-mode 1)
+  )
 
 ;; ;; Ivy
 ;; (use-package ivy
@@ -74,14 +71,10 @@
 ;;   (global-set-key (kbd "C-c C-r") 'ivy-resume))
 
 
-;; (use-package company
-;;   :ensure t
-;;   :diminish ""
-;;   :init
-;;   ;; (add-hook 'prog-mode-hook 'company-mode)
-;;   ;; (add-hook 'comint-mode-hook 'company-mode)
-;;   :config
-;;   (global-company-mode))
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode))
 
 
 ;; (use-package amx
@@ -98,6 +91,11 @@
 (use-package which-key
   :ensure t
   :init
+  
+(use-package evil-escape
+:ensure t
+:config
+)
   (setq which-key-idle-delay 0.5)
   :config
   (which-key-mode t)
@@ -164,18 +162,19 @@
 ;;   :defer t
 ;;   )
 
-(use-package key-chord
-  :ensure t
-  :config
-  (setq key-chord-two-keys-delay 0.3)
-  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-  (key-chord-define evil-replace-state-map "jf" 'evil-normal-state)
-  (key-chord-define evil-insert-state-map "jf" 'evil-normal-state)
-  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-  (key-chord-mode 1)
-  )
+;; (use-package key-chord
+;;   :ensure t
+;;   :config
+;;   (setq key-chord-two-keys-delay 0.3)
+;;   (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;;   (key-chord-define evil-replace-state-map "jf" 'evil-normal-state)
+;;   (key-chord-define evil-insert-state-map "jf" 'evil-normal-state)
+;;   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+;;   (key-chord-mode 1)
+;;   )
 
-;; ;; Git
+;; ;
+					; ;; Git
 (use-package magit
   :ensure t
   )

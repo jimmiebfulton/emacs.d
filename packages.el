@@ -92,18 +92,6 @@
   :ensure t
   :init
   
-(use-package evil-escape
-:ensure t
-:config
-)
-  (setq which-key-idle-delay 0.5)
-  :config
-  (which-key-mode t)
-  (which-key-setup-minibuffer)
-  (setq which-key-allow-evil-operators t)
-  (setq which-key-show-operator-state-maps t)
-)
-
 
 ;; (use-package counsel
 ;;   :ensure t

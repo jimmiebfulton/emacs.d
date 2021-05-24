@@ -51,7 +51,7 @@
  "bs"  '(save-buffer :which-key "save")
  "bk"  '(kill-this-buffer :which-key "kill")
  "bK"  '(kill-buffer :which-key "kill other")
-;; "bo"  '(counsel-switch-buffer :which-key "switch")
+ "bo"  '(counsel-switch-buffer :which-key "switch")
  "bl"  '(helm-buffers-list :which-key "List")
  "bw"  '(write-file :which-key "write")
 
@@ -59,6 +59,15 @@
  "ee"  '(eval-expression :which-key "expr")
  "eb"  '(eval-buffer :which-key "buffer")
  "er"  '(eval-region :which-key "region")
+
+ "g"   '(:ignore t :which-key "git")
+ "gs"  '(magit-status :which-key "status")
+ "gp"  '(magit-pull :which-key "pull")
+ "gP"  '(magit-push :which-key "push")
+ "gco" '(magit-checkout :which-key "checkout")
+ "gcl" '(magit-clone :which-key "clone")
+ "gci" '(magit-commit :which-key "commit")
+ "gb"  '(magit-branch-or-checkout :which-key "branch")
 
  "h"   '(:ignore t :which-key "Help")
  "hd"  '(:ignore t :which-key "Describe")
@@ -69,9 +78,23 @@
  "hdb" 'describe-key-briefly
  "hs"  'find-function
  "hh"  'help
- 
+
+ "t"   '(:ignore t :which-key "Text")
+ "tc"  '(comment-or-uncomment-region :which-key "Comment Region")
+ "tl"  '(comment-line :which-key "Comment Line")
+ "ti"  '(indent-region :which-key "Indent Region")
  )
+
 ;; (general-define-key
+;;  :states '(visual)
+;;  :prefix "SPC"
+;;  :non-normal-prefix "C-SPC"
+
+;;  "t"   '(:ignore t :which-key "Text")
+;;  "tc"  '(:ignore t :which-key "Comment")
+;;  "tcc"  '(comment-or-uncomment-region :which-key "Region")
+;; )
+;; ;; (general-define-key
 ;;  :states '(normal visual insert emacs motion)
 ;;  :keymaps 'override
 ;;  :prefix "SPC"

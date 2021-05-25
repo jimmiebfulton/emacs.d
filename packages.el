@@ -153,6 +153,15 @@
   :ensure t
   )
 
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  ;; (rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "dark orange"))))
+  ;; (rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "green"))))
+  ;; (rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "blue"))))
+  )
+
 ;; ;;
 ;; ;; Rust Support
 ;; ;;

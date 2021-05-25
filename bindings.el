@@ -16,6 +16,7 @@
  :non-normal-prefix "C-SPC"
 
  ":"  '(helm-M-x :which-key "M-x")
+ "u"   'universal-argument
 
  "f"   '(:ignore t :which-key "Find")
  "ff"  '(helm-find-files :which-key "File")
@@ -32,6 +33,7 @@
  "b"   '(:ignore t :which-key "Buffers")
  "b>"  '(next-buffer :which-key "next")
  "b<"  '(previous-buffer :which-key "previous")
+ "bb"  '(helm-mini :which-key "Helm Mini")
  "bn"  '(evil-buffer-new :which-key "new")
  "bs"  '(save-buffer :which-key "save")
  "bk"  '(kill-this-buffer :which-key "kill")
@@ -74,6 +76,10 @@
  "jf"  '(find-file-at-point :which-key "file")
  "jd"  '(dired-at-point :which-key "directory")
  "ju"  '(browse-url-at-point :which-key "url")
+
+ "s"   '(:ignore t :which-key "Search")
+ "sd"  '(helm-rg :which-key "Directory")
+ "sg"  '(helm-google-suggest :which-key "Google")
 
  "t"   '(:ignore t :which-key "Text")
  "tc"  '(comment-or-uncomment-region :which-key "Comment Region")

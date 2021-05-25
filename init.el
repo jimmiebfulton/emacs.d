@@ -12,7 +12,7 @@
 
 (when (window-system)
   (set-frame-size (selected-frame) 170 50)
-  (set-frame-position (selected-frame) 50 600)
+  (set-frame-position (selected-frame) 50 650)
 )
 
 (load "~/.emacs.d/settings.el")
@@ -29,7 +29,7 @@
  ;; If there is more than one, they won't work right.
  '(helm-minibuffer-history-key "M-p")
  '(package-selected-packages
-   '(all-the-icons rainbow-delimiters evil-mc key-chord telephone-line general which-key swiper evil-collection evil helm use-package)))
+   '(helm-ag helm-rg all-the-icons rainbow-delimiters evil-mc key-chord telephone-line general which-key swiper evil-collection evil helm use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

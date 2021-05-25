@@ -20,6 +20,15 @@
   (helm-mode 1)
   (setq completion-styles '(flex))
   (setq helm-display-function 'helm-display-buffer-in-own-frame)
+  (define-key helm-find-files-map (kbd "C-i") 'helm-ff-TAB)
+  )
+
+(use-package helm-rg
+  :ensure t
+  )
+
+(use-package helm-ag
+  :ensure t
   )
 
 
@@ -68,13 +77,13 @@
   )
 
 ;; ;; Ivy
-;; (use-package ivy
-;;   :ensure t
-;;   :config
-;;   (ivy-mode 1)
-;;   (setq ivy-use-virtual-buffers t)
-;;   (setq enable-recursive-minibuffers t)
-;;   (global-set-key (kbd "C-c C-r") 'ivy-resume))
+(use-package ivy
+  :ensure t
+  :config
+  ;; (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  (global-set-key (kbd "C-c C-r") 'ivy-resume))
 
 ;; (use-package amx
 ;;   :ensure t
@@ -126,7 +135,7 @@
   (general-override-mode)
   )
 
-(when (window-system)
+;; (when (window-system)
   (use-package telephone-line
     :ensure t
     :config
@@ -134,7 +143,7 @@
 	   telephone-line-evil-use-short-tag nil)
     (telephone-line-mode 1)
     )
-  )
+  ;; )
 
 ;; (when (window-system)
 

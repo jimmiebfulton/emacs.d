@@ -18,6 +18,8 @@
   :demand t
   :config
   (helm-mode 1)
+  (setq completion-styles '(flex))
+  (setq helm-display-function 'helm-display-buffer-in-own-frame)
   )
 
 
@@ -34,8 +36,12 @@
    (setq evil-want-C-u-scroll t)
   :config
   (evil-mode 1)
-  (global-undo-tree-mode)   
+  (global-undo-tree-mode)
   (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+		       
+		       
 )
 
 (use-package evil-collection
@@ -138,6 +144,10 @@
 ;;     (all-the-icons-ivy-setup))
 ;; )
 
+(use-package all-the-icons
+  :ensure t
+  )
+
 (use-package ace-window
   :ensure t
   :defer t
@@ -157,9 +167,6 @@
   :ensure t
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-  ;; (rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "dark orange"))))
-  ;; (rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "green"))))
-  ;; (rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "blue"))))
   )
 
 ;; ;;

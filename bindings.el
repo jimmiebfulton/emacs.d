@@ -1,3 +1,8 @@
+(define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-ns-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-completion-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-must-match-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-isearch-map (kbd "<escape>") 'keyboard-escape-quit)
 
 (general-define-key
  :states '(normal)

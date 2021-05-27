@@ -2,6 +2,9 @@
 (setq mac-right-command-modifier 'super)
 (setq mac-option-modifier 'meta)
 
+(when (string= system-type "darwin")       
+  (setq dired-use-ls-dired nil))
+
 (menu-bar-mode -1)
 
 ;; UTF-8

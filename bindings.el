@@ -15,7 +15,8 @@
  :prefix "SPC"
  :non-normal-prefix "C-SPC"
 
- ":"  '(helm-M-x :which-key "M-x")
+ ":"   '(helm-M-x :which-key "M-x")
+ "SPC" '(helm-M-x :which-Key "M-x")
  "u"   'universal-argument
 
  "f"   '(:ignore t :which-key "Find")

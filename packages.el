@@ -123,11 +123,16 @@
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
+(use-package helm-projectile
+  :ensure t
+  :config
+  (helm-projectile-on)
+  )
 
-;; (use-package counsel-projectile
-;;   :ensure t
-;;   :defer t
-;;   )
+(use-package counsel-projectile
+  :ensure t
+  :defer t
+  )
 
 (use-package general
   :ensure t
@@ -239,3 +244,11 @@
   :ensure t
   :config
   (flycheck-mode 1))
+
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "pandoc"))

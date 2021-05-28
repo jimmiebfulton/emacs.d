@@ -78,6 +78,10 @@
  "jd"  '(dired-at-point :which-key "directory")
  "ju"  '(browse-url-at-point :which-key "url")
 
+ "p"   '(:ignore t :which-key "Project")
+ "pf"  '(helm-projectile-switch-project :which-key "Find")
+ "ps"  '(helm-projectile-rg :which-key "Search")
+
  "s"   '(:ignore t :which-key "Search")
  "sd"  '(helm-rg :which-key "Directory")
  "sg"  '(helm-google-suggest :which-key "Google")

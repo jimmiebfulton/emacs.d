@@ -2,7 +2,10 @@
 ;; (package-initialize)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
+;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
 ;;(add-to-list 'package-archives '("melpa" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
@@ -129,10 +132,10 @@
   (helm-projectile-on)
   )
 
-(use-package counsel-projectile
-  :ensure t
-  :defer t
-  )
+;; (use-package counsel-projectile
+;;   :ensure t
+;;   :defer t
+;;   )
 
 (use-package general
   :ensure t
@@ -188,6 +191,15 @@
 ;; ;;
 ;; ;; https://robert.kra.hn/posts/2021-02-07_rust-with-emacs/#rust-analyzer
 ;; ;;
+(use-package rustic
+  :ensure t
+  :config
+  (setq rustic-lsp-server 'rls)
+  )
+
+(use-package lsp-mode
+  :ensure t
+  )
 ;; (use-package rustic
 ;;   :ensure
 ;;   :bind (:map rustic-mode-map

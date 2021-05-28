@@ -79,7 +79,9 @@
  "ju"  '(browse-url-at-point :which-key "url")
 
  "p"   '(:ignore t :which-key "Project")
- "pf"  '(helm-projectile-switch-project :which-key "Find")
+ "pf"  '(helm-projectile-find-file :which-key "Find File")
+ "pk"  '(projectile-kill-buffers :which-key "Kill")
+ "pp"  '(helm-projectile-switch-project :which-key "Switch Project")
  "ps"  '(helm-projectile-rg :which-key "Search")
 
  "s"   '(:ignore t :which-key "Search")
@@ -90,6 +92,8 @@
  "tc"  '(comment-or-uncomment-region :which-key "Comment Region")
  "tl"  '(comment-line :which-key "Comment Line")
  "ti"  '(indent-region :which-key "Indent Region")
+ "ts"  '(neotree-show :which-key "Show Tree")
+ "tt"  '(neotree-toggle :which-key "Toggle Tree")
 
  "w"   '(:ignore t :which-key "window")
  "ww"  '(toggle-maximize-buffer :which-key "toggle")

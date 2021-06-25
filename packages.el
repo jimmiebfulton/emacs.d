@@ -302,3 +302,12 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)) 
   )
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (emacs-lisp . t)
+   (R . t)
+   (shell . t)
+   )
+ )

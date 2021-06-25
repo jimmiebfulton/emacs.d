@@ -20,11 +20,10 @@
     (mac-auto-operator-composition-mode)
     )
 (set-face-attribute 'default nil
-                    :family "JetBrainsMonoMedium Nerd Font"
+                    :font "JetBrains Mono"
                     :height 140
                     :weight 'normal
                     :width 'normal)
-
 
 
 ;; Don't create backups

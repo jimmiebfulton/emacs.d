@@ -20,7 +20,7 @@
     (mac-auto-operator-composition-mode)
     )
 (set-face-attribute 'default nil
-                    :font "JetBrains Mono"
+                    :font "JetBrainsMono NF"
                     :height 140
                     :weight 'normal
                     :width 'normal)

@@ -309,5 +309,6 @@
    (emacs-lisp . t)
    (R . t)
    (shell . t)
+   (eshell . t)
    )
  )
